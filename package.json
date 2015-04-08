@@ -1,0 +1,25 @@
+{
+  "name": "dmm4js",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": {
+    "name": "yukinagae",
+    "email": "yuki.nagae1130@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "request": "*"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.0.1",
+    "should": "^4.3.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yukinagae/dmm4js.git"
+  }
+}
