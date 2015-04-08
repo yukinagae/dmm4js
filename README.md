@@ -31,7 +31,7 @@ npm install dmm4js
 ## Example
 
 ```javascript
-var dmm = new DMM4js();
+var dmm = new DMM4js({"api_id": "[APIID]", "affiliate_id": "[アフィリエイトID]"});
 dmm.hits(3).sort('date').keyword('ハリーポッター').get().then(function(result) {
   console.log(result.items[0].title); //
 });
