@@ -4,8 +4,6 @@ var parseString = require('xml2js').parseString;
 // setting
 var base_url = 'http://affiliate-api.dmm.com/';
 var default_setting = {
-  "api_id": "[APIID]", // APIを利用するために割り当てられたIDを設定します。
-  "affiliate_id": "[アフィリエイトID]", // アフィリエイトIDを設定します。使用出来るアフィリエイトIDは、APIID登録時に発行された末尾が990～999のものになります。
   "operation": "ItemList",
   "version": "2.0.0",
   "timestamp": new Date().toLocaleString(),
@@ -29,8 +27,16 @@ function get(url) {
 }
 
 // DMM4js object
-function DMM4js() {
-  this.setting = default_setting;
+function DMM4js(ids) {
+  // set ids and default settings
+  this.setting = ids;
+  for(var key in default_setting) {
+    if(default_setting.hasOwnProperty(key)) {
+      this.setting[key] = default_setting[key];
+    }
+  }
+
+  // build default url
   this.url = base_url + '?';
   for(var key in this.setting) {
     if(this.setting.hasOwnProperty(key)) {
@@ -61,9 +67,5 @@ apis.forEach(function(api) {
     return this;
   };
 });
-
-var dmm = new DMM4js();
-var url = dmm.hits(3).sort('date').keyword('ハリポッター').get_url();
-console.log(url);
 
 module.exports = DMM4js;
