@@ -1,8 +1,5 @@
 # dmm4js
 
-[![NPM version](https://badge.fury.io/js/dmm4js.svg)](https://npmjs.org/package/dmm4js)
-[![Build Status](https://travis-ci.org/yukinagae/dmm4js.svg?branch=master)](https://travis-ci.org/yukinagae/dmm4js)
-
 Simple DMM API v2 client written in JavaScript.
 
 Reference: [DMM API v2](https://affiliate.dmm.com/api/)
